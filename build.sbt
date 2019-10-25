@@ -1,6 +1,5 @@
 name := "sangria-marshalling-testkit"
 organization := "org.sangria-graphql"
-version := "1.0.2-SNAPSHOT"
 mimaPreviousArtifacts := Set("org.sangria-graphql" %% "sangria-marshalling-testkit" % "1.0.1")
 
 description := "Sangria Marshalling API TestKit"
@@ -27,7 +26,8 @@ libraryDependencies ++= Seq(
 git.remoteRepo := "git@github.com:sangria-graphql/sangria-marshalling-testkit.git"
 
 // Publishing
-
+releaseCrossBuild := true
+releasePublishArtifactsAction := PgpKeys.publishSigned.value
 publishMavenStyle := true
 publishArtifact in Test := false
 pomIncludeRepository := (_ => false)
